@@ -1,6 +1,5 @@
 package jp.syoboi.android.rotatecontrol;
 
-import android.annotation.TargetApi;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -9,7 +8,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.PixelFormat;
-import android.os.Build;
 import android.os.IBinder;
 import android.util.Log;
 import android.view.Gravity;
@@ -34,12 +32,6 @@ public class RotateService extends Service {
 	
 	View	mView;
 	int		mCurRotation = -1;
-	
-	@Override
-	public void onCreate() {
-		super.onCreate();
-	}
-	
 	
 	@Override
 	public IBinder onBind(Intent intent) {
@@ -172,7 +164,6 @@ public class RotateService extends Service {
 	}
 	
 	
-	@TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
 	void setupView() {
 		if (mView != null) {
 			return;

@@ -6,11 +6,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.content.pm.ActivityInfo;
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
-import android.view.Display;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.WindowManager;
@@ -18,8 +16,6 @@ import android.view.WindowManager;
 public class MainActivity extends Activity {
 	
 	
-	int	mTestSequence = 0;
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -42,13 +38,6 @@ public class MainActivity extends Activity {
 		super.onResume();
 		
 		startService(new Intent(this, RotateService.class));
-		
-	}
-	
-	@Override
-	public void onConfigurationChanged(Configuration newConfig) {
-		super.onConfigurationChanged(newConfig);
-		showRotate();
 	}
 	
 	void updateConfig() {
@@ -102,14 +91,4 @@ public class MainActivity extends Activity {
 			return ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE;
 		}
 	}
-	
-	
-	void showRotate() {
-		Display d = getWindowManager().getDefaultDisplay();
-		final int rot = d.getRotation();
-		
-		Log.v("", "rot:" + rot);
-	}
-	
-
 }
