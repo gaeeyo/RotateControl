@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">画面の向き設定</string>
+    <string name="howToUse">使い方</string>
+    <string name="help">ステータスバーを引っ張り出して、自分が見ている向きに合ったアイコンをタップすると、画面の向きが変わります\n× ボタンを押すと画面の固定を解除し、システムの設定に従った動作に戻ります。</string>
+    
+    <string name="exit">終了</string>
+
+</resources>
